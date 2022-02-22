@@ -16,8 +16,8 @@ public class TestAppOrder {
         form.$("[data-test-id=name] input").setValue("Коржов Василий");
         form.$("[data-test-id=phone] input").setValue("+79633414412");
         form.$("[data-test-id=agreement]").click();
-        form.$("[type=\"button\"]").click();
-        $("[data-test-id=\"order-success\"]").shouldHave(exactText("  Ваша заявка успешно отправлена!" +
+        form.$("[type='button']").click();
+        $("[data-test-id='order-success']").shouldHave(exactText("  Ваша заявка успешно отправлена!" +
                 " Наш менеджер свяжется с вами в ближайшее время."));
     }
 }
