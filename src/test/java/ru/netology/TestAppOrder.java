@@ -12,12 +12,12 @@ public class TestAppOrder {
     @Test
     void shouldSubmitRequest() {
         open("http://localhost:9999");
-        SelenideElement form = $("#root");
+        SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Коржов Василий");
-        form.$("[data-test-id=phone] input.input__control").setValue("+79633414412");
+        form.$("[data-test-id=phone] input").setValue("+79633414412");
         form.$("[data-test-id=agreement]").click();
         form.$("[type=\"button\"]").click();
-        $(".Success_successBlock__2L3Cw").shouldHave(exactText("  Ваша заявка успешно отправлена!" +
+        $("[data-test-id=\"order-success\"]").shouldHave(exactText("  Ваша заявка успешно отправлена!" +
                 " Наш менеджер свяжется с вами в ближайшее время."));
     }
 }
